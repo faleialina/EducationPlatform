@@ -34,6 +34,6 @@ async function deleteUserDB(id: string): Promise<iUser[]> {
     const sql = 'DELETE FROM users where id = $1 returning *';
     const result = (await client.query(sql, [id])).rows;
     return result;
-}
+};
 
 export { createUserDB, getAllUserDB, getByIdDB, updateUserDB, deleteUserDB };

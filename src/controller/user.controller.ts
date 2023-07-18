@@ -31,6 +31,6 @@ route.delete('/:id', async (req, res): Promise<void> => {
     const { id } = req.params;
     const data = await deleteUser(id);
     res.send(data);
-})
+});
 
 export default route;

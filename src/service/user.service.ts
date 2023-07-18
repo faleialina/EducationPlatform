@@ -24,6 +24,6 @@ async function updateUser(id:string, name:string, surname:string, email:string, 
 async function deleteUser(id:string): Promise<iUser[]> {
     const data = await deleteUserDB(id);
     return data;
-}
+};
 
 export { createUser, getAllUser, getById, updateUser, deleteUser };
