@@ -1,5 +1,5 @@
 import { pool } from "../db";
-import { iCourse } from "../interfaces/coursesIndex";
+import { iCourse } from '../interfaces/index';
 
 async function getAllCourseDB(): Promise<iCourse[]> {
     const client = await pool.connect();

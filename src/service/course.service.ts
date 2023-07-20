@@ -1,5 +1,5 @@
 import { getAllCourseDB, getByIdCourseDB, createCourseDB, updateCourseDB, deleteCourseDB } from '../repository/course.repository';
-import { iCourse } from '../interfaces/coursesIndex';
+import { iCourse } from '../interfaces/index';
 
 async function getAllCourse(): Promise<iCourse[]> {
     const data = await getAllCourseDB();

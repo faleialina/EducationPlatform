@@ -5,5 +5,10 @@ interface iUser {
     email: string;
     pwd: string
 };
+interface iCourse {
+    id: string;
+    course: string
+};
 
-export {iUser};
+
+export {iUser, iCourse};
