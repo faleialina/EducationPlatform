@@ -1,6 +1,7 @@
-import { pool } from "../db";
+import { pool } from '../db';
+import { iUser } from '../interfaces/index';
 
-async function createUserDB(name, surname, email, pwd) {
+async function createUserDB(name: string, surname: string, email: string, pwd: string): Promise<iUser[]> {
     const client = await pool.connect();
     try {
         await client.query('BEGIN');
@@ -15,7 +16,7 @@ async function createUserDB(name, surname, email, pwd) {
 
 };
 
-async function getUserByEmailDB(email) {
+async function getUserByEmailDB(email: string): Promise<iUser[]> {
     const client = await pool.connect();
     const sql = 'SELECT * FROM users where email = $1';
     const result = (await client.query(sql, [email])).rows;

@@ -4,7 +4,7 @@ import builbResponse from '../helper/bildresponse';
 
 const route = express.Router();
 
-route.post('/reg', async (req, res) => {
+route.post('/reg', async (req, res): Promise<void> => {
     try {
         const { name, surname, email, pwd } = req.body;
         const data = await createUser(name, surname, email, pwd)
@@ -15,7 +15,7 @@ route.post('/reg', async (req, res) => {
 
 });
 
-route.post('/auth', async (req, res) => {
+route.post('/auth', async (req, res): Promise<void> => {
     try {
         const { email, pwd } = req.body;
         const data = await authorizationUser(email, pwd);
