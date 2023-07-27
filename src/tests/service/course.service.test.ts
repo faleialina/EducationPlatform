@@ -6,8 +6,10 @@ describe('getAllCourse:', () => {
         const repoFunction = jest.spyOn(repository, 'getAllCourseDB');
         repoFunction.mockResolvedValue([
             { id: '1', course: 'js' }, { id: '2', course: 'ts' }
-        ])
+        ]);
+
         const result = await getAllCourse();
+        
         expect(repoFunction).toHaveBeenCalled();
         expect(result[0].id).toBe('1');
         expect(result[1].id).toBe('2');
@@ -25,8 +27,10 @@ describe('getByIdCourse:', () => {
         const repoFunction = jest.spyOn(repository, 'getByIdCourseDB');
         repoFunction.mockResolvedValue([
             { id: '1', course: 'js' }
-        ])
+        ]);
+
         const result = await getByIdCourse('1');
+
         expect(repoFunction).toHaveBeenCalled();
         expect(result[0].id).toBe('1');
         expect(result.length).toBe(1);
