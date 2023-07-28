@@ -2,7 +2,7 @@ import { createUser, getAllUser, getById, updateUser, deleteUser } from '../../s
 import * as repository from '../../repository/user.repository';
 
 describe('getAllUser:', () => {
-    test(('1'), async () => {
+    test(('test1'), async () => {
         const repoFunction = jest.spyOn(repository, 'getAllUserDB');
         repoFunction.mockResolvedValue([{
             id: '1',
