@@ -33,10 +33,20 @@ describe('getAllUser:', () => {
         expect(result).toHaveLength(2);
         expect(result.length).toBe(2);
     });
+    test(('test2'), async () => {
+        const repoFunction = jest.spyOn(repository, 'getAllUserDB');
+        repoFunction.mockResolvedValue([]);
+        try {
+            await getAllUser();
+        } catch (error: any) {
+            expect(repoFunction).toHaveBeenCalled();
+            expect(error.message).toBe('БД не заполнена');
+        };
+    });
 });
 
 describe('getById:', () => {
-    test(('1'), async () => {
+    test(('test1'), async () => {
         const repoFunction = jest.spyOn(repository, 'getByIdDB');
         repoFunction.mockResolvedValue([
             {
@@ -62,9 +72,20 @@ describe('getById:', () => {
             pwd: 'gfv3kg4'
         }]);
     });
+    test(('test2'), async () => {
+        const repoFunction = jest.spyOn(repository, 'getByIdDB');
+        repoFunction.mockResolvedValue([]);
+        try {
+            await getById('123');
+        } catch (error: any) {
+            expect(repoFunction).toHaveBeenCalled();
+            expect(error.message).toBe('такого id нет')
+        };
+    });
 });
+
 describe('createUser:', () => {
-    test(('1'), async () => {
+    test(('test1'), async () => {
         const repoFunction = jest.spyOn(repository, 'createUserDB');
         repoFunction.mockResolvedValue([
             {
@@ -76,7 +97,7 @@ describe('createUser:', () => {
             }
         ]);
 
-        const result = await createUser('Alina','Falei', 'august3@mail.ru','gfv3kg4');
+        const result = await createUser('Alina', 'Falei', 'august3@mail.ru', 'gfv3kg4');
 
         expect(repoFunction).toHaveBeenCalled();
         expect(result[0].name).toBe('Alina');
@@ -93,9 +114,20 @@ describe('createUser:', () => {
             pwd: 'gfv3kg4'
         }]);
     });
+    test(('test2'), async () => {
+        const repoFunction = jest.spyOn(repository, 'createUserDB');
+        repoFunction.mockResolvedValue([]);
+        try {
+            await createUser('Alina', 'Falei', 'august3@mail.ru', 'gfv3kg4');
+        } catch (error: any) {
+            expect(repoFunction).toHaveBeenCalled();
+            expect(error.message).toBe('данные не сохранены');
+        };
+    });
+
 });
 describe('updateUser:', () => {
-    test(('1'), async () => {
+    test(('test1'), async () => {
         const repoFunction = jest.spyOn(repository, 'updateUserDB');
         repoFunction.mockResolvedValue([
             {
@@ -107,7 +139,7 @@ describe('updateUser:', () => {
             }
         ]);
 
-        const result = await updateUser('1','Alina','Falei', 'august3@mail.ru','gfv3kg4');
+        const result = await updateUser('1', 'Alina', 'Falei', 'august3@mail.ru', 'gfv3kg4');
 
         expect(repoFunction).toHaveBeenCalled();
         expect(result[0].id).toBe('1');
@@ -125,9 +157,19 @@ describe('updateUser:', () => {
             pwd: 'gfv3kg4'
         }]);
     });
+    test(('test2'), async () => {
+        const repoFunction = jest.spyOn(repository, 'updateUserDB');
+        repoFunction.mockResolvedValue([]);
+        try {
+            await updateUser('1', 'Alina', 'Falei', 'august3@mail.ru', 'gfv3kg4');
+        } catch (error: any) {
+            expect(repoFunction).toHaveBeenCalled();
+            expect(error.message).toBe('такого id нет')
+        };
+    });
 });
 describe('deleteUser:', () => {
-    test('1', async () => {
+    test('test1', async () => {
         const repoFunction = jest.spyOn(repository, 'deleteUserDB');
         repoFunction.mockResolvedValue([{
             id: '1',
@@ -150,5 +192,15 @@ describe('deleteUser:', () => {
             email: 'august3@mail.ru',
             pwd: 'gfv3kg4'
         }]);
+    });
+    test('test2', async () => {
+        const repoFunction = jest.spyOn(repository, 'deleteUserDB');
+        repoFunction.mockResolvedValue([]);
+        try {
+            await deleteUser('123');
+        } catch (error: any) {
+            expect(repoFunction).toHaveBeenCalled();
+            expect(error.message).toBe('такого id нет');
+        };
     });
 });
