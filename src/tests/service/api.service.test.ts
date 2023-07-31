@@ -1,7 +1,7 @@
 import { createUser, authorizationUser } from '../../service/api.service';
 import * as repository from '../../repository/api.repository';
 import bcrypt from 'bcrypt';
-import { mock } from 'node:test';
+
 describe('createUser:', () => {
     test(('test1'), async () => {
         const mockUserByEmail = jest.spyOn(repository, 'getUserByEmailDB');

@@ -45,7 +45,7 @@ describe('createCourseDB:', () => {
 describe('updateCourseDB:', () => {
     test('test1', async () => {
         client.query.mockResolvedValue({ rows: [{ id: '1', course: 'js' }] });
-        const result = await updateCourseDB('1','js');
+        const result = await updateCourseDB('1', 'js');
         expect(client.query).toHaveBeenCalled();
         expect(result).toEqual([{ id: '1', course: 'js' }]);
         expect(result[0].id).toBe('1');
