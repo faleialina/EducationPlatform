@@ -17,3 +17,23 @@
     color: var(--primaty-grey-dark, #757575);
     font: 600 18px Montserrat;
 }
+
+.preview .previewInfo .platforma {
+    width: 163px;
+}
+
+.preview .previewInfo .platforma .aboutPlatform {
+    color: #2B788B;
+    font: 700 16 px Montserrat;
+    text-align: center;
+    border-radius: 100px;
+    background: var(--primaty-cyan-light, #C3DCE3);
+    padding: 14px 22px;
+}
+
+.preview .previewInfo .platforma .previewStudents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
