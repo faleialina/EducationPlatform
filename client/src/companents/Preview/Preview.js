@@ -13,8 +13,8 @@ function Preview() {
                     <div className={style.aboutPlatform}>About platform</div>
                     <div className={style.previewStudents}>
                         <div className={style.zipper}></div>
-                        <p>300</p>
-                        <p>+</p>
+                        <p>600</p>
+                        <p className={style.plus}>+</p>
                     </div>
                     <p>Students</p>
                 </div>

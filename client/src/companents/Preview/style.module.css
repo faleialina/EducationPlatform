@@ -20,6 +20,7 @@
 
 .preview .previewInfo .platforma {
     width: 163px;
+    
 }
 
 .preview .previewInfo .platforma .aboutPlatform {
@@ -35,5 +36,40 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 40px;
+    margin-top: 49px;
+    
 }
 
+.preview .previewInfo .platforma .previewStudents .zipper {
+    background-image: url(../Preview/assets/Frame\ 35271.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 30px;
+}
+
+.preview .previewInfo .platforma .previewStudents p {
+    color: #000;
+    font: 400 40px Dela Gothic One;
+}
+
+.preview .previewInfo .platforma .previewStudents .plus{
+    color: #2B788B;
+    font: 400 40px Dela Gothic One;
+}
+
+.preview .previewInfo .platforma p{
+    color: #585858;
+    font: 600 16px Montserrat;
+    text-align: center;
+}
+
+.previewImg {
+    background-image: url(../Preview/assets/Frame\ 25.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 933px;
+    height: 600px;
+    margin-top: 110px;
+}
