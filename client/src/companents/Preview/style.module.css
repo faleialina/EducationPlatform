@@ -102,11 +102,13 @@
 .learn .info p {
     color: var(--primaty-grey-dark, #757575);
     font: 600 18px Montserrat;
+    margin-top: 30px;
 }
 
 .learn .info .icons {
     display: flex;
     gap: 15px;
+    margin-top: 30px;
 }
 
 .learn .info .icon1 {
@@ -132,15 +134,14 @@
 }
 
 .knowledge .info h1 {
-
     color: var(--primaty-black, #000);
     font: 400 48px Dela Gothic One;
 }
 
 .knowledge .info p {
-
     color: var(--primaty-grey-dark, #757575);
     font: 600 18px Montserrat;
+    margin-top: 30px;
 }
 
 .knowledge .info .btnKnow {
@@ -154,6 +155,7 @@
     background: var(--primaty-cyan-light, #C3DCE3);
     width: 150px;
     height: 45px;
+    margin-top: 34px;
 }
 
 .knowledge .img {
@@ -186,6 +188,7 @@
 .progress .info p {
     color: var(--primaty-grey-dark, #757575);
     font: 600 18px Montserrat;
+    margin-top: 30px;
 }
 
 .progress .info .btnKnow {
@@ -199,4 +202,5 @@
     gap: 19px;
     width: 150px;
     height: 45px;
+    margin-top: 34px;
 }
