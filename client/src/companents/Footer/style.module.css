@@ -1,5 +1,7 @@
 .wrapper {
-    width: 1180px;
+   
+    width: 1220px;
+    margin: 2% auto;
 }
 
 .nav {
@@ -11,24 +13,11 @@
     margin-bottom: 20px;
 }
 
-.nav .transition {
+.nav .transition, .nav .name {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.nav .transition p {
-    margin-right: 30px;
-}
-
-.nav .name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav .name p {
-    margin-left: 30px;
+    gap: 30px;
 }
 
 .line {
