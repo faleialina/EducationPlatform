@@ -1,18 +1,18 @@
+import Options from '../Options/Options';
 import style from './style.module.css';
 function Footer() {
+    const array1 = ['Home', 'Textbook', 'Statistics', 'Sprint'];
+
+    const array2 = ['Alex', 'Gabriel', 'Marcus']
+
     return (
         <div className={style.wrapper}>
             <div className={style.nav}>
                 <div className={style.transition}>
-                    <p>Home</p>
-                    <p>Textbook</p>
-                    <p>Statistics</p>
-                    <p>Sprint</p>
+                    <Options array={array1} />
                 </div>
                 <div className={style.name}>
-                    <p>Alex</p>
-                    <p>Gabriel</p>
-                    <p>Marcus</p>
+                    <Options array={array2} />
                 </div>
             </div>
             <div className={style.line}></div>
