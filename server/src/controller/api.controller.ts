@@ -1,27 +1,28 @@
-import express from 'express';
+import express, { Response, Request } from 'express';
 import { createUser, authorizationUser } from '../service/api.service';
-import builbResponse from '../helper/bildresponse';
+import buildResponse from '../helper/buildResponse';
+import { iUser } from '../interfaces';
 
 const route = express.Router();
 
-route.post('/reg', async (req, res): Promise<void> => {
+route.post('/reg', async (req: Request, res: Response): Promise<void> => {
     try {
         const { name, surname, email, pwd } = req.body;
-        const data = await createUser(name, surname, email, pwd)
-        builbResponse(res, 200, data);
+        const data: iUser[] = await createUser(name, surname, email, pwd)
+        buildResponse(res, 200, data);
     } catch (error: any) {
-        builbResponse(res, 404, error.message);
+        buildResponse(res, 404, error.message);
     };
 
 });
 
-route.post('/auth', async (req, res): Promise<void> => {
+route.post('/auth', async (req: Request, res: Response): Promise<void> => {
     try {
         const { email, pwd } = req.body;
-        const data = await authorizationUser(email, pwd);
-        builbResponse(res, 200, data);
+        const data: iUser[] = await authorizationUser(email, pwd);
+        buildResponse(res, 200, data);
     } catch (error: any) {
-        builbResponse(res, 404, error.message);
+        buildResponse(res, 404, error.message);
     }
 
 });
