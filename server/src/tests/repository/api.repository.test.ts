@@ -7,7 +7,7 @@ jest.mock('pg', () => {
 });
 
 describe('createUserDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({
             rows: [
                 {
@@ -41,7 +41,7 @@ describe('createUserDB:', () => {
 });
 
 describe('getUserByEmailDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({
             rows: [
                 {

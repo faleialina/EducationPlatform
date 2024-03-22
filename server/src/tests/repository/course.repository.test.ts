@@ -7,7 +7,7 @@ jest.mock('pg', () => {
     return { Pool: jest.fn(() => pool) }
 });
 describe('getAllCourseDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({ rows: [{ id: '1', course: 'js' }] });
         const result = await getAllCourseDB();
         expect(client.query).toHaveBeenCalled();
@@ -19,7 +19,7 @@ describe('getAllCourseDB:', () => {
     });
 });
 describe('getByIdCourseDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({ rows: [{ id: '1', course: 'js' }] });
         const result = await getByIdCourseDB('1');
         expect(client.query).toHaveBeenCalled();
@@ -31,7 +31,7 @@ describe('getByIdCourseDB:', () => {
     });
 });
 describe('createCourseDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({ rows: [{ id: '1', course: 'js' }] });
         const result = await createCourseDB('js');
         expect(client.query).toHaveBeenCalled();
@@ -43,7 +43,7 @@ describe('createCourseDB:', () => {
     });
 });
 describe('updateCourseDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({ rows: [{ id: '1', course: 'js' }] });
         const result = await updateCourseDB('1', 'js');
         expect(client.query).toHaveBeenCalled();
@@ -55,7 +55,7 @@ describe('updateCourseDB:', () => {
     });
 });
 describe('deleteCourseDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({ rows: [{ id: '1', course: 'js' }] });
         const result = await deleteCourseDB('1');
         expect(client.query).toHaveBeenCalled();

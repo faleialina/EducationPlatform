@@ -10,7 +10,7 @@ jest.mock('pg', () => {
 });
 
 describe('getAllUserDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({
             rows: [
                 {
@@ -63,7 +63,7 @@ describe('getAllUserDB:', () => {
 });
 
 describe('getByIdDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({
             rows: [
                 {
@@ -97,7 +97,7 @@ describe('getByIdDB:', () => {
 });
 
 describe('createUserDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({
             rows: [
                 {
@@ -130,7 +130,7 @@ describe('createUserDB:', () => {
     });
 });
 describe('updateUserDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({
             rows: [
                 {
@@ -163,7 +163,7 @@ describe('updateUserDB:', () => {
     });
 });
 describe('deleteUserDB:', () => {
-    test('test1', async () => {
+    test('corrected', async () => {
         client.query.mockResolvedValue({
             rows: [
                 {
